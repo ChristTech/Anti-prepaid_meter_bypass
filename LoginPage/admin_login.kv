@@ -1,0 +1,102 @@
+MDScreen:
+    name: "LoginPage"
+    on_enter:
+        app.anim(top_division1)
+        app.anim1(top_division2)
+        app.icons(icon)
+        app.text(Label)
+
+    MDFloatLayout:
+        MDFloatLayout:
+            # this is the top part of the screen that moves
+            id: top_division1
+            size_hint_y: .6
+            pos_hint: {"center_y": 1.8}
+            radius: [0, 0, 0, 40]
+            canvas:
+                Color:
+                    rgb: (89/255, 203/255, 232/255, 1)
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+
+        MDFloatLayout:
+            id: top_division2
+            size_hint_y: .6
+            pos_hint: {"center_y": 1.8}
+            radius: [0, 0, 0, 40]
+            canvas:
+                Color:
+                    rgb: (89/255, 203/255, 232/255, 1)
+                Ellipse:
+                    size: self.size
+                    pos: self.pos
+
+        MDIconButton:
+            id: icon
+            icon: "account-circle"
+            pos_hint: {"center_x": .5, "center_y": .8}
+            user_font_size: "60sp"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+
+        MDLabel:
+            id: Label
+            text: f"[font=Arial]Admin Page[/font]"
+            markup: True
+            pos_hint: {"center_y": .75}
+            halign: "center"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
+            font_style: "H5"
+            opacity: 0
+
+        MDTextButton:
+            id: Login
+            text: "Login"
+            pos_hint: {"center_x": .15, "center_y": .55}
+            theme_text_color: "Custom"
+            text_color: 0, 0, .75, .85
+
+        MDTextButton:
+            id: Login
+            text: "Admin"
+            pos_hint: {"center_x": .35, "center_y": .55}
+            theme_text_color: "Custom"
+            text_color: 0.5, 0.5, .5, 1
+
+
+        MDTextField:
+            hint_text: "Enter Your Email"
+            size_hint_x: .8
+            pos_hint: {"center_x": .5, "center_y": .46}
+            current_hint_text_color: 0, 0, 0, 1
+            color_mode: "Custom"
+            line_color_focus: 0, 0, 1, 1
+
+        MDTextField:
+            hint_text: "Enter Your Password"
+            size_hint_x: .8
+            pos_hint: {"center_x": .5, "center_y": .34}
+            current_hint_text_color: 0, 0, 0, 1
+            password: True
+            color_mode: "Custom"
+            line_color_focus: 0, 0, 1, 1
+
+        MDRaisedButton:
+            text: "Login"
+            pos_hint: {"center_x": .5, "center_y": .2}
+            size_hint_x: .5
+            md_bg_color: 89/255, 203/255, 232/255, 1
+
+        MDLabel:
+            text: "Don't have an account?"
+            pos_hint: {"center_x": .672, "center_y": .1}
+            font_style: "Body2"
+
+        MDTextButton:
+            text: "Sign Up"
+            pos_hint: {"center_x": .745, "center_y": .1}
+            font_style:"Body2"
+            color: 1, 0, 0, 1
+
