@@ -25,6 +25,17 @@ class LoginApp(MDApp):
         screen_manager.add_widget(Builder.load_file("admin_login.kv"))
         return screen_manager
 
+    def AdminLogin(self):
+        # gets the name of the current screen i' working on
+        current_screen = self.root.get_screen("LoginPage")
+        current_screen.ids.slide.load_next(mode="next")
+
+    def UserLogin(self):
+        # gets the name of the current screen i' working on
+        current_screen = self.root.get_screen("LoginPage")
+        current_screen.ids.slide.load_previous()
+
+
     def anim(self, widget):
         anim = Animation(pos_hint = {"center_y": 1.16})
         anim.start(widget)
@@ -42,10 +53,6 @@ class LoginApp(MDApp):
         anim = Animation(opacity=0, duration=2)
         anim += Animation(opacity=1)
         anim.start(widget)
-
-    def admin(self):
-        print(f"{self.root.ids.Login}")
-        #self.root.ids.slide.load_next(mode="next")
 
 
 if __name__ == "__main__":
